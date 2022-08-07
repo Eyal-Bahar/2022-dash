@@ -5,6 +5,8 @@ import pandas as pd
 import plotly.express as px
 from dash import Dash, dcc, html
 
+import markdown
+
 app = Dash(__name__)
 
 # assume you have a "long-form" data frame
@@ -22,7 +24,7 @@ fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
 
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
-
+    # html.H1('Hello Dash', style={'textAlign': 'center', 'color': '#7FDBFF'}),
     html.Div(children='''
         Dash: A web application framework for your data.
     '''),
@@ -31,7 +33,10 @@ app.layout = html.Div(children=[
         id='example-graph',
         figure=fig
     )
+    ,
+    # html.Div([    dcc.Markdown(children=markdown.markdown_text)])
 ])
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

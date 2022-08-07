@@ -21,7 +21,7 @@ def render(app: Dash) -> html.Div:
             return html.Div("No data selected.", id=ids.BAR_CHART)
 
         fig = px.bar(filtered_data, x="medal", y="count", color="nation", text="nation")
-
+        # print(f"{nations}")
         return html.Div(dcc.Graph(figure=fig), id=ids.BAR_CHART)
-
+    
     return html.Div(id=ids.BAR_CHART)
