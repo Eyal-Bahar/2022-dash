@@ -23,7 +23,7 @@ fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
 
 
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='Hello Dash2'),
     # html.H1('Hello Dash', style={'textAlign': 'center', 'color': '#7FDBFF'}),
     html.Div(children='''
         Dash: A web application framework for your data.
@@ -34,7 +34,7 @@ app.layout = html.Div(children=[
         figure=fig
     )
     ,
-    # html.Div([    dcc.Markdown(children=markdown.markdown_text)])
+    html.Div([    dcc.Markdown(children=markdown.markdown_text)])
 ])
 
 
